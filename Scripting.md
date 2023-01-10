@@ -219,3 +219,9 @@ The dictionaries are in: /usr/share/dict
 	read -p "Enter the Input string " chain
 	chain=${chain^^}
 	echo "${chain}"
+
+## Looking at other code block 
+
+```
+this is a block it says 
+```
