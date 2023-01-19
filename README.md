@@ -19,7 +19,9 @@ Linux Torvalds is the author of the Linux kernel, while stallman was behind GNU.
 
 # Command to display Kernel Version**
 
-		uname -r
+```bash
+uname -r
+```
 
 # Command to know kernel is stable or not?
 
@@ -29,13 +31,14 @@ if y is even, then the version is stable; if it’s odd, then it’s a developme
 
 # Command to change your working directory to /etc.**
 
-		cd /etc
-
+```bash
+cd /etc
+```
 # What kind of files are inside the /etc directory?
 
 It has a lot of startup files and config files which have the settings to control the operations of programs, utilities or processes.
 
-    Using  "-ltr" 
+Using  "-ltr" 
 
 **ls -ltr**
 
@@ -50,7 +53,9 @@ There is no difference between these two commands. -r and -R are identical in Li
 
 # Using -n:
 
-		cat -n /etc/group
+```bash
+cat -n /etc/group
+```
 
 The utility of -n is to number each line of the output. Without -n only contents are listed out.
 
@@ -62,13 +67,15 @@ One notation adds the permissions on previous while the other assigns irrespecti
 
 The difference between both types is that the first one uses specific syntax +/- to add or remove permissions, while the second one uses simplified numeric notation.
 
-		chmod ugo+rw file.txt
+chmod ugo+rw file.txt
 
 * *Permissions after command are -rwxrwxrwx* 
 
 nothing changed as the everyone already has all permissions for the file, and using ugo+rw to add read-write permissions wouldn’t change anything.
 
-		chmod 666 file.txt
+```bash
+chmod 666 file.txt
+```
 
 * *Permissions after command are -rw-rw-rw-*
 
@@ -80,13 +87,17 @@ The difference between both the commands is that the first one uses specific syn
 
 If initial permissions are (-rwxr--r--). 
 
-		chmod ugo+rw file.txt
+```bash
+chmod ugo+rw file.txt
+```
 
 * *Permissions after the command are -rwxrw-rw-.*
 
 Read and Write permissions are added to everyone who didn’t have them already
 
-		chmod 620 file.txt
+```bash
+chmod 620 file.txt
+```
 
 * *Permissions after the command are -rw—w----.*
 
@@ -94,9 +105,9 @@ With the numeric notation, Read and write (4+6) are assigned to user and Write (
 
 # Difference between -a and -A
 
-		ls -a
+ls -a
 
-		ls -A
+ls -A
 
 ls -a lists all files and directories, including the hidden ones and “.” and “..”
 
@@ -104,13 +115,17 @@ ls -A is similar but excludes the directories “.” ”..” but still shows t
 
 # Using "-p" 
 
-		mkdir -p dir1/subdir1/small
+```bash
+mkdir -p dir1/subdir1/small
+```
 
 The -p option ensures that the command is executed without error even if the specified parent directories don’t exist. It created them if they do not live already.
 
 # Using "%s" 
 
-		date +%s
+```bash
+date +%s
+```
 
 %s  option returns seconds since 1970-01-01 00:00:00 UTC to the current date
 
@@ -118,97 +133,116 @@ The -p option ensures that the command is executed without error even if the spe
 
 Create a hard link called "hshortcut" for the file "file.txt"
 
-		ln  file hshortcut
+```bash
+ln  file hshortcut
+```
 
 Create a soft link called "ssorthcut" for the file "file.txt"
 
-		ln -s file ssorthcut
+```bash
+ln -s file ssorthcut
+```
 
 # Utility of "-lwc" 
 
-		wc -lwc file.txt
+```bash
+wc -lwc file.txt
+```
 
 Their utility is to specify the type of count needed in wc command; in the options -lwc  c prints the byte counts and w prints the word count while l prints the newline counts.
 
 # Command to display only the last but one line 
 
-		tail -n 2 file.txt | head -n 1
-
+```bash
+tail -n 2 file.txt | head -n 1
+```
 
 
 # Types of Loops in BASH
 
 **For Loop**
-		
-		for [condition]
-		do
-		action
-		done
+
+for [condition]
+do
+action
+done
 **Example**
 
-		for x in a b c
-		do
-		echo “x is $x”
-		done
+```bash
+for x in a b c
+do
+echo “x is $x”
+done
+```
 
 **While Loop**
 
-		while [condition]
-		do
-		[actions]
-		done
+while [condition]
+do
+[actions]
+done
 **Example**
-		
-		while [$i -gt 2]
-		do
-		echo value: $1
-		((i++))
-		done
+
+```bash
+while [$i -gt 2]
+do
+echo value: $1
+((i++))
+done
+```
+
 **Until Loop**
 
-		until [condition]
-		do
-		[actions]
-		done
+until [condition]
+do
+[actions]
+done
 
 **Example**
 
-		until [ $i -gt 2]
-		do
-		echo value: $1
-		((i++))
-		done
+```bash
+until [ $i -gt 2]
+do
+echo value: $1
+((i++))
+done
+```
+
 **Select Loop**
-		
-		select [condition]
-		do
-		[actions]
-		done
+
+select [condition]
+do
+[actions]
+done
 **Example**
-		
-		select e in list
-		do
-		echo “$e”
-		done
-		while [condition]
-		do
+
+```bash
+select e in list
+do
+echo “$e”
+done
+while [condition]
+do
+```
 
 **While Shift**
 
-		shift [position]
-		done
-		example
-		while(($#)) ; do
-		echo "The 1st arg is: ==$1=="
-		shift
-		done
+shift [position]
+done
+example
+while(($#)) ; do
+echo "The 1st arg is: ==$1=="
+shift
+done
 
 **example**
-		
-		while(($#)) ; do
-		echo "val: $1"
-		shift
-		done
+
+```bash
+while(($#)) ; do
+echo "val: $1"
+shift
+done
+```
 
 # Using "-s", "-n", "-t", "-p" with read command:
 
@@ -229,14 +263,14 @@ Their utility is to specify the type of count needed in wc command; in the optio
 -p is used to produce a given prompt before taking the input from read.
 
 # Difference between ";", "||", "&&"
-		
-		ls -l ; mkdir directory; cd directory; touch f{1..9}
+
+ls -l ; mkdir directory; cd directory; touch f{1..9}
 * *with “ ; ” the following command is executed if the first one fails or not.*
 
-		ls -l file.txt || echo the file does not exist
+ls -l file.txt || echo the file does not exist
 * *with “ ||,” the following command is executed only if the first command fails*
 
-		ls -l file.txt && echo the file exist
+ls -l file.txt && echo the file exist
 * *with “&&”; the following command is executed only if the first command is successful.*
 
 
@@ -246,51 +280,66 @@ Their utility is to specify the type of count needed in wc command; in the optio
 
 # If fruits=(apple banana pear orange) explain the below outputs
 
-		echo ${#fruits}
-		
-		5
+```bash
+echo ${#fruits}
 
- * *it returned the number of elements in the word string fruits.*
+5
+```
 
-		echo ${#fruits[@]}
+* *it returned the number of elements in the word string fruits.*
 
-		4
+```bash
+echo ${#fruits[@]}
+
+4
+```
 
 * *used the syntax to return the number of elements in the array.*
 
-		echo ${#fruits[0]}
+```bash
+echo ${#fruits[0]}
 
-		5
+5
+```
 
 * *used the syntax to return the length of 0th element in the array.*
 
-		echo ${#fruits[1]}
+```bash
+echo ${#fruits[1]}
 
-		6
+6
+```
 
 * *used the syntax to return the length of 1st element in the array.*
 
-		echo ${#fruits[2]}
+```bash
+echo ${#fruits[2]}
 
-		4
+4
+```
 
 * *used the syntax to return the length of 2nd element in the array.*
 
-		echo ${#fruits[3]}
+```bash
+echo ${#fruits[3]}
 
-		6
+6
+```
 
 * *used the syntax to return the length of 3rd element in the array.*
 
-		echo ${fruits[@]:3}
+```bash
+echo ${fruits[@]:3}
 
-		orange
+orange
+```
 
 * *used the syntax to return the third element in the array same as echo ${fruits[3]}*
-		
-		echo ${fruits[@]:2:3}
 
-		pear orange
+```bash
+echo ${fruits[@]:2:3}
+```
+pear orange
 
 * *used the syntax to print elements staring from 2 until 3.*
 
@@ -298,13 +347,17 @@ Their utility is to specify the type of count needed in wc command; in the optio
 
 **Add the element "aa" at the beginning of the table**
 
-		fruits=( "aa" "${fruits[*]}" )
+```bash
+fruits=( "aa" "${fruits[*]}" )
+```
 
 **Add the element "gg" at the end of the table**
 
-		fruits=( "${fruits[*]}" "gg" )
-
+```bash
+fruits=( "${fruits[*]}" "gg" )
+```
 **Add the element "dd" in the middle**
 
-		fruits=( "${fruits[@]:0:2}" "dd" "${fruits[@]:2}" )
-
+```bash
+fruits=( "${fruits[@]:0:2}" "dd" "${fruits[@]:2}" )
+```
