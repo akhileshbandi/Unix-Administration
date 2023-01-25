@@ -9,28 +9,8 @@ Select your game:1
 Loto Logic: Generate 5 random numbers between 1 and 49, and a lucky number between 1 and 10. 
 
 EuroMillion Logic: , Generate 5  random numbers between 1 and 50, and two different numbers (denoted by stars/étoiles) between 1 and 12. 
-```bash
-#!/bin/bash
-while true
-do
-echo -n "This script randomly generates the lottery numbers you:
-1) Loto
-2) Euro Million
-3) Exit
+```bash:/Scripts/3.1.sh
 
-Select Your Game"
-read choice
-case $choice in
-    1)echo "numbers are"; shuf -i 1-49 -n 5
-    echo "Lucky"; shuf -i 1-10 -n 1
-    ;;
-    2)echo "numbers are "; shuf -i 1-50 -n 5 
-    echo "Stars"; shuf -i 1-12 -n 2
-    ;;
-    3) exit
-
-esac
-done
 ```
 
 
