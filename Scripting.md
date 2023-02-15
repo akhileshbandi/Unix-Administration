@@ -5,10 +5,12 @@ This script randomly generates the lottery numbers for you:
 1) Loto 
 2) Euro Million 
 3) Exit 
-Select your game:1 
+Select your game:1
+
+\
 Loto Logic: Generate 5 random numbers between 1 and 49, and a lucky number between 1 and 10. 
 
-EuroMillion Logic: , Generate 5  random numbers between 1 and 50, and two different numbers (denoted by stars/étoiles) between 1 and 12. 
+EuroMillion Logic: Generate 5  random numbers between 1 and 50, and two different numbers (denoted by stars/étoiles) between 1 and 12. 
 ```bash
 #!/bin/bash
 while true
